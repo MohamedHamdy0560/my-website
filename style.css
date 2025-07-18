@@ -198,6 +198,32 @@ footer {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 8px;
 }
+@media (max-width: 768px) {
+  header {
+    padding: 30px 10px;
+  }
+
+  .review-form {
+    max-width: 90%;
+  }
+
+  .comments {
+    max-width: 90%;
+  }
+
+  .header-logo {
+    width: 50px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
 
 
 
