@@ -1,0 +1,203 @@
+/* إعداد عام للصفحة */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* رأس الصفحة */
+header {
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* تدرج أزرق سماوي جميل */
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* شريط التنقل */
+nav {
+    background: #333;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background: #ff7e5f;
+    color: #fff;
+}
+
+/* محتوى الصفحة */
+main {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* العناوين */
+h1, h2 {
+     color: #000;
+    margin-top: 0;
+}
+
+/* معرض الصور */
+.services .gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.services .gallery img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.services .gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* النماذج */
+form {
+    display: grid;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+/* الزر */
+button {
+    background: #ff7e5f;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e7664c;
+}
+
+/* الفوتر */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 12px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+.my-video {
+    display: block;
+    margin: 20px auto;       /* علشان ييجي في نص الصفحة */
+    width: 100%;             /* ياخد كل العرض المتاح */
+    max-width: 600px;        /* أقصى عرض 600 بكسل */
+    height: auto;            /* يخلي الارتفاع يتناسب تلقائيًا */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.header-content {
+    display: flex;
+    align-items: center;   /* يجعل الصورة والعنوان في خط واحد رأسيًا */
+    justify-content: center; /* لتوسيطهم أفقيًا في الهيدر */
+    gap: 15px;             /* مسافة بين الصورة والعنوان */
+}
+
+.header-logo {
+    width: 300px;           /* حجم الشعار */
+    height: auto;
+}
+.social-icon {
+    width: 30px;           /* حجم الأيقونة */
+    height: auto;
+    margin: 0 8px;         /* مسافة يمين ويسار */
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);  /* تكبير الأيقونة عند المرور */
+}
+#reviews {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+#reviews h2 {
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.review-form {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.review-form select,
+.review-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.review-form button {
+    background: #0072ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.review-form button:hover {
+    background: #0056b3;
+}
+
+.comments p {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+}
+
+
+
