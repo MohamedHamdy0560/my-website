@@ -1,3 +1,21 @@
+<?php
+// أضف هذا في بداية ملف index.html إذا قمت بتغييره إلى index.php
+$comments = file_exists("comments.txt") ? file("comments.txt") : [];
+$comments = array_reverse($comments); // لعرض الأحدث أولاً
+?>
+
+<section id="reviews-list">
+    <h3>تعليقات العملاء السابقة</h3>
+    <?php if(!empty($comments)): ?>
+        <?php foreach($comments as $comment): ?>
+            <div class="review-item">
+                <p><?php echo nl2br(htmlspecialchars($comment)); ?></p>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>لا توجد تعليقات بعد. كن أول من يقيّم!</p>
+    <?php endif; ?>
+</section>
 <!DOCTYPE html>
 <html lang="ar">
 <head>
